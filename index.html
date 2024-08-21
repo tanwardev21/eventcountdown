@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Countdown</title>
+    <!-- Google Font: Amita -->
+    <link href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Amita', cursive;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .page {
+            display: none;
+            height: 100vh;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        #home {
+            background: linear-gradient(45deg, #1e1e1e, #2c2c2c);
+        }
+
+        #teachers-day {
+            background: linear-gradient(45deg, #2b2d2f, #3e4346);
+        }
+
+        #ganesh-chaturthi {
+            background: linear-gradient(45deg, #3d3d3d, #4d4d4d);
+        }
+
+        #engineers-day {
+            background: linear-gradient(45deg, #2e2e2e, #3c3c3c);
+        }
+
+        #about {
+            background: linear-gradient(45deg, #4b4b4b, #6c6c6c);
+        }
+
+        header {
+            margin: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+         /* Highlight color for headings */
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+
+        #countdown {
+            display: flex;
+            justify-content: center;
+            font-size: 2em;
+        }
+
+        #countdown div {
+            margin: 10px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+        }
+
+        footer {
+            margin-top: 30px;
+            /* Footer text color to match the heading highlight */
+        }
+        /* Background and heading colors for each page */
+        #home {
+            background: linear-gradient(45deg, #1a1a1d, #4e4e50);
+        }
+
+        #teachers-day {
+            background: linear-gradient(45deg, #0f0c29, #302b63);
+        }
+
+        #teachers-day h1 {
+            color: #ff8c00;
+        }
+
+        #ganesh-chaturthi {
+            background: linear-gradient(45deg, #232526, #414345);
+        }
+
+        #ganesh-chaturthi h1 {
+            color: #e25822;
+        }
+
+        #engineers-day {
+            background: linear-gradient(45deg, #141e30, #243b55);
+        }
+
+        #engineers-day h1 {
+            color: #4caf50;
+        }
+
+        #about {
+            background: linear-gradient(45deg,#141e30, #243b55 );
+        }
+
+        #about h1 {
+color: #4caf50 ;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" onclick="showPage('home')">HOME</a>
+        <a href="#" onclick="showPage('teachers-day')">Teacher's Day</a>
+        <a href="#" onclick="showPage('ganesh-chaturthi')">Ganesh Chaturthi</a>
+        <a href="#" onclick="showPage('engineers-day')">Engineer's Day</a>
+        <a href="#" onclick="showPage('about')">ABOUT</a>
+    </nav>
+
+    <!-- Home Section -->
+    <div id="home" class="page" style="display:block;">
+        <header>
+            <h1>Welcome to Event Countdown</h1>
+            <p>Select an event from the menu to view the countdown and learn more about it.</p>
+        </header>
+    </div>
+
+    <!-- Teacher's Day Section -->
+    <div id="teachers-day" class="page">
+        <header>
+            <h1>Countdown to Teacher's Day</h1>
+            <p>Teacher's Day is celebrated on 5th September every year to honor the contributions of teachers and mark the birth anniversary of Dr. Sarvepalli Radhakrishnan.</p>
+        </header>
+        <main>
+            <div id="countdown-teachers-day">
+                <div><span id="days-teachers"></span>Days</div>
+                <div><span id="hours-teachers"></span>Hours</div>
+                <div><span id="minutes-teachers"></span>Minutes</div>
+                <div><span id="seconds-teachers"></span>Seconds</div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Ganesh Chaturthi Section -->
+    <div id="ganesh-chaturthi" class="page">
+        <header>
+            <h1>Countdown to Ganesh Chaturthi</h1>
+            <p>Ganesh Chaturthi is a major Hindu festival celebrated to mark the birth of Lord Ganesha, the God of wisdom and prosperity.</p>
+        </header>
+        <main>
+            <div id="countdown-ganesh-chaturthi">
+                <div><span id="days-ganesh"></span>Days</div>
+                <div><span id="hours-ganesh"></span>Hours</div>
+                <div><span id="minutes-ganesh"></span>Minutes</div>
+                <div><span id="seconds-ganesh"></span>Seconds</div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Engineer's Day Section -->
+    <div id="engineers-day" class="page">
+        <header>
+            <h1>Countdown to Engineer's Day</h1>
+            <p>Engineer's Day is celebrated on 15th September every year in India to commemorate the birth anniversary of Sir M. Visvesvaraya, an eminent Indian engineer.</p>
+        </header>
+        <main>
+            <div id="countdown-engineers-day">
+                <div><span id="days-engineers"></span>Days</div>
+                <div><span id="hours-engineers"></span>Hours</div>
+                <div><span id="minutes-engineers"></span>Minutes</div>
+                <div><span id="seconds-engineers"></span>Seconds</div>
+            </div>
+        </main>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="page">
+        <header>
+            <h1>About Me</h1>
+            <p>My name is <a style="color:#f9d423;">'HIMANSHU TANWAR'</a>, and I am a <a style="color:#f9d423;">STUDENT</a>. You can reach me via email at <a href="mailto:[devt81632@gmail.com]" style="color:#f9d423;">[devt81632@gmail.com]</a>.</p>
+        </header>
+    </div>
+
+    <footer>
+        <p>Celebrate the spirit of these important days by honoring the values they represent.</p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.style.display = 'none');
+            document.getElementById(pageId).style.display = 'block';
+        }
+
+        // Set the event dates
+        const dates = {
+            "teachers-day": new Date("September 5, 2024 00:00:00").getTime(),
+            "ganesh-chaturthi": new Date("September 7, 2024 00:00:00").getTime(),
+            "engineers-day": new Date("September 15, 2024 00:00:00").getTime()
+        };
+
+        // Function to update the countdown for each event every second
+        function updateCountdown(eventId, countdownId) {
+            const countdownFunction = setInterval(function() {
+                const now = new Date().getTime();
+                const timeLeft = dates[eventId] - now;
+
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                document.getElementById(`days-${countdownId}`).innerText = days;
+                document.getElementById(`hours-${countdownId}`).innerText = hours;
+                document.getElementById(`minutes-${countdownId}`).innerText = minutes;
+                document.getElementById(`seconds-${countdownId}`).innerText = seconds;
+
+                if (timeLeft < 0) {
+                    clearInterval(countdownFunction);
+                    document.getElementById(`countdown-${countdownId}`).innerHTML = "The event has started!";
+                }
+            }, 1000);
+        }
+
+        // Initialize countdowns for each event
+        updateCountdown('teachers-day', 'teachers');
+        updateCountdown('ganesh-chaturthi', 'ganesh');
+        updateCountdown('engineers-day', 'engineers');
+    </script>
+</body>
+</html>
